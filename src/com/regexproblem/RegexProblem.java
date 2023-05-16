@@ -65,6 +65,20 @@ public class RegexProblem {
     }
 
     /**
+     * This method is for user enter valid password and should minimum 8 character
+     */
+    public void password(){
+        Pattern p = Pattern.compile("[A-Za-z]{8,}");
+        Matcher m = p.matcher("rahulkumar");
+        boolean b = m.matches();
+        if(b){
+            System.out.println("Valid password");
+        }else {
+            System.out.println("Invalid password");
+        }
+    }
+
+    /**
      * Main method to execute the program
      */
     public static void main(String[] args) {
@@ -72,6 +86,7 @@ public class RegexProblem {
 //        regex.firstName();
 //        regex.lastName();
 //        regex.email();
-        regex.mobileNumber();
+//        regex.mobileNumber();
+        regex.password();
     }
 }
