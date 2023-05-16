@@ -90,6 +90,19 @@ public class RegexProblem {
             System.out.println("Invalid password");
         }
     }
+    /**
+     * This method is for user enter valid password and should 1 numeric value
+     */
+    public void NumericPassword(){
+        Pattern p = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+${8,}");
+        Matcher m = p.matcher("rahul1Kumar");
+        boolean b = m.matches();
+        if(b){
+            System.out.println("Valid password");
+        }else {
+            System.out.println("Invalid password");
+        }
+    }
 
     /**
      * Main method to execute the program
@@ -101,6 +114,7 @@ public class RegexProblem {
 //        regex.email();
 //        regex.mobileNumber();
 //        regex.password();
-        regex.UppercasePassword();
+//        regex.UppercasePassword();
+        regex.NumericPassword();
     }
 }
