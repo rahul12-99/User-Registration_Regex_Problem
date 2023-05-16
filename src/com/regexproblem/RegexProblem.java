@@ -34,11 +34,29 @@ public class RegexProblem {
     }
 
     /**
+     * This method is for user enter valid email
+     */
+    public void email(){
+        /* Pattern E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co)
+         and 2 optional (xyz & in) with precise @ and . positions */
+
+        Pattern p = Pattern.compile("[a-z0-9+.+a-z]+@+[bl+.+co+.+in]{2,}");
+        Matcher m = p.matcher("abc.xyz@bl.co.in");
+        boolean b = m.matches();
+        if(b){
+            System.out.println("Valid email");
+        }else {
+            System.out.println("Invalid email");
+        }
+    }
+
+    /**
      * Main method to execute the program
      */
     public static void main(String[] args) {
         RegexProblem regex = new RegexProblem();
 //        regex.firstName();
-        regex.lastName();
+//        regex.lastName();
+        regex.email();
     }
 }
