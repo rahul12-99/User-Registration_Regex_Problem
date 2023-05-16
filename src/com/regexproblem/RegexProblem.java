@@ -18,12 +18,27 @@ public class RegexProblem {
             System.out.println("Invalid first name");
         }
     }
+    /**
+     * This method is for User enter valid last name
+     * And last-name starts with capital and has minimum 3 character
+     */
+    public void lastName(){
+        Pattern p = Pattern.compile("[A-Z][a-z]{2,}");
+        Matcher m = p.matcher("Kumar");
+        boolean b = m.matches();
+        if(b){
+            System.out.println("Valid last name");
+        }else {
+            System.out.println("Invalid last name");
+        }
+    }
 
     /**
      * Main method to execute the program
      */
     public static void main(String[] args) {
         RegexProblem regex = new RegexProblem();
-        regex.firstName();
+//        regex.firstName();
+        regex.lastName();
     }
 }
