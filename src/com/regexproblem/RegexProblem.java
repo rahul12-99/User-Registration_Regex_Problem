@@ -51,12 +51,27 @@ public class RegexProblem {
     }
 
     /**
+     * This method is for user enter valid mobile number
+     */
+    public void mobileNumber(){
+        Pattern p = Pattern.compile("^[0-9]{2}[ ][0-9]{10}$");
+        Matcher m = p.matcher("91 9934691893");
+        boolean b = m.matches();
+        if(b){
+            System.out.println("Valid mobile number");
+        }else {
+            System.out.println("Invalid mobile number");
+        }
+    }
+
+    /**
      * Main method to execute the program
      */
     public static void main(String[] args) {
         RegexProblem regex = new RegexProblem();
 //        regex.firstName();
 //        regex.lastName();
-        regex.email();
+//        regex.email();
+        regex.mobileNumber();
     }
 }
