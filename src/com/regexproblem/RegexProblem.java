@@ -77,6 +77,19 @@ public class RegexProblem {
             System.out.println("Invalid password");
         }
     }
+    /**
+     * This method is for user enter valid password and should 1 upperCase character
+     */
+    public void UppercasePassword(){
+        Pattern p = Pattern.compile("[A-Za-z]{8,}");
+        Matcher m = p.matcher("rahulKumar");
+        boolean b = m.matches();
+        if(b){
+            System.out.println("Valid password");
+        }else {
+            System.out.println("Invalid password");
+        }
+    }
 
     /**
      * Main method to execute the program
@@ -87,6 +100,7 @@ public class RegexProblem {
 //        regex.lastName();
 //        regex.email();
 //        regex.mobileNumber();
-        regex.password();
+//        regex.password();
+        regex.UppercasePassword();
     }
 }
