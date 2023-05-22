@@ -103,6 +103,20 @@ public class RegexProblem {
             System.out.println("Invalid password");
         }
     }
+    /**
+     * This method is for user enter valid password and should 1 numeric value and
+     * one special char and minimum 8 character in password
+     */
+    public void specialCharPassword() {
+        Pattern p = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[-+_!@#$%^&*., ?]).+${8,}");
+        Matcher m = p.matcher("rahul1@Kro");
+        boolean b = m.matches();
+        if (b) {
+            System.out.println("Password is Correct with exact one special Character");
+        } else {
+            System.out.println("Password is incorrect");
+        }
+    }
 
     /**
      * Main method to execute the program
@@ -115,6 +129,7 @@ public class RegexProblem {
 //        regex.mobileNumber();
 //        regex.password();
 //        regex.UppercasePassword();
-        regex.NumericPassword();
+//        regex.NumericPassword();
+        regex.specialCharPassword();
     }
 }
